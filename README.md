@@ -389,8 +389,7 @@ CREATE TABLE orders (
 
 ## Demo Video
 
-A demonstration video showing all features of the application is available at:
-[Demo Video Link - To be added]
+A demonstration video showing all features of the application is available at: https://cap.link/p0j8ryexjdd8chs
 
 ## Screenshots
 
@@ -426,19 +425,6 @@ Below are additional screenshots found in the `screenshots/` folder.
 #### Payment
 ![Payment](screenshots/payment.png)
 
-## Future Enhancements
-
-- User authentication and multiple user support
-- Product search and filtering
-- Category-based navigation
-- Payment gateway integration (Stripe/PayPal)
-- Order history tracking
-- Product reviews and ratings
-- Wishlist functionality
-- Stock management
-- Admin dashboard
-- Email notifications
-
 ## Development Notes
 
 ### Scripts
@@ -453,29 +439,17 @@ Below are additional screenshots found in the `screenshots/` folder.
 - `npm run build` - Build for production
 - `npm run preview` - Preview production build
 
-### Environment Variables
-
-Create a `.env` file in the backend directory (optional):
-```
-PORT=5000
-DATABASE_PATH=./ecommerce.db
-```
-
-## Contributing
-
-This is an assignment project, but suggestions and feedback are welcome!
-
 ## License
 
 This project is created for the Vibe Commerce internship assignment.
 
 ## Author
 
-Created by [Your Name] as part of the Vibe Commerce screening process.
+Created by Aakanksha Singh as part of the Vibe Commerce screening process.
 
 ## Acknowledgments
 
-- Unsplash for product images
+- Freepik for product images
 - React Icons for the icon library
 - Google Fonts (Inter) for typography
 
