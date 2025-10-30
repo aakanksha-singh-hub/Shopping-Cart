@@ -400,10 +400,6 @@ Amounts shown in screenshots are in INR (₹).
 ![Products Page](screenshots/products.png)
 *Product grid with add to cart functionality*
 
-### Shopping Cart
-![Shopping Cart](screenshots/cart.png)
-*Cart page with item management*
-
 ### Checkout Modal
 ![Checkout](screenshots/checkout.png)
 *Checkout form with validation*
@@ -411,6 +407,24 @@ Amounts shown in screenshots are in INR (₹).
 ### Order Receipt
 ![Receipt](screenshots/receipt.png)
 *Order confirmation receipt*
+
+### Gallery
+Below are additional screenshots found in the `screenshots/` folder.
+
+#### Add to Cart
+![Add to Cart](screenshots/add-to-cart.png)
+
+#### Coupon Applied
+![Coupon](screenshots/coupon.png)
+
+#### Order Confirmation
+![Confirmation](screenshots/confirmation.png)
+
+#### Product Details
+![Details](screenshots/details.png)
+
+#### Payment
+![Payment](screenshots/payment.png)
 
 ## Future Enhancements
 
