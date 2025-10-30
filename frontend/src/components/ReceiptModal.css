@@ -1,0 +1,268 @@
+.receipt-modal {
+  max-width: 600px;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.success-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.success-icon {
+  font-size: 2rem;
+  color: var(--success);
+  animation: scaleIn 0.5s ease;
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.receipt-content {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.receipt-header {
+  text-align: center;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--border);
+}
+
+.receipt-header h3 {
+  margin: 0 0 0.5rem 0;
+  color: var(--text-primary);
+  font-size: 1.25rem;
+}
+
+.order-number {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  margin: 0.25rem 0;
+}
+
+.order-date {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.receipt-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.receipt-section h4 {
+  margin: 0;
+  color: var(--text-primary);
+  font-size: 1rem;
+  font-weight: 600;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9375rem;
+}
+
+.info-row span:first-child {
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.info-row span:last-child {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.receipt-items {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.receipt-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem;
+  background: var(--background);
+  border-radius: 0.5rem;
+}
+
+.item-details {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.item-name {
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.item-quantity {
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  background: var(--surface);
+  padding: 0.125rem 0.5rem;
+  border-radius: 0.25rem;
+}
+
+.item-price {
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+.receipt-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: white;
+  border-radius: 0.75rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+.total-value {
+  font-size: 1.75rem;
+  font-weight: 700;
+}
+
+.receipt-footer {
+  text-align: center;
+  padding-top: 1rem;
+  border-top: 1px dashed var(--border);
+}
+
+.receipt-footer p {
+  margin: 0.5rem 0;
+  color: var(--text-primary);
+}
+
+.footer-note {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+@media (max-width: 768px) {
+  .receipt-modal {
+    max-width: 95%;
+    margin: 1rem;
+  }
+
+  .receipt-content {
+    padding: 1rem;
+  }
+
+  .receipt-header h3 {
+    font-size: 1.1rem;
+  }
+
+  .order-number {
+    font-size: 0.9rem;
+  }
+
+  .success-icon {
+    font-size: 1.5rem;
+  }
+
+  .receipt-total {
+    padding: 1rem;
+    font-size: 1rem;
+  }
+
+  .total-value {
+    font-size: 1.5rem;
+  }
+
+  .item-details {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+  }
+
+  .modal-actions {
+    flex-direction: column;
+    gap: 0.75rem;
+    position: sticky;
+    bottom: 0;
+    background: var(--surface);
+    padding: 1rem 1.5rem;
+  }
+
+  .modal-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .receipt-modal {
+    max-width: 100%;
+    margin: 0.5rem;
+    border-radius: 0.75rem;
+  }
+
+  .receipt-content {
+    padding: 0.75rem;
+    gap: 1rem;
+  }
+
+  .receipt-section {
+    gap: 0.5rem;
+  }
+
+  .receipt-item {
+    padding: 0.5rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .item-price {
+    align-self: flex-end;
+  }
+
+  .receipt-total {
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+  }
+}
+
+@media print {
+  .modal-overlay {
+    background: white;
+  }
+
+  .modal-actions,
+  .close-btn {
+    display: none;
+  }
+
+  .receipt-modal {
+    box-shadow: none;
+  }
+}
+
