@@ -4,6 +4,7 @@
   border: 1px solid #fbbf24;
   border-radius: 1rem;
   box-shadow: var(--shadow-lg);
+  margin-bottom: 2rem;
 }
 
 .promo-content {

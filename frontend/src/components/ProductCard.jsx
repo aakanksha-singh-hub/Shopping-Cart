@@ -20,11 +20,20 @@ function ProductCard({ product, onAddToCart }) {
     }
   };
 
+  const imageSrc = (() => {
+    if (!product?.image) return '';
+    const src = String(product.image);
+    if (src.startsWith('http://') || src.startsWith('https://') || src.startsWith('data:')) {
+      return src;
+    }
+    return src.startsWith('/') ? src : `/${src}`;
+  })();
+
   return (
     <div className="product-card animate-fade-in">
       <div className="product-image-container">
         <img 
-          src={product.image} 
+          src={imageSrc} 
           alt={product.name}
           className="product-image"
           loading="lazy"

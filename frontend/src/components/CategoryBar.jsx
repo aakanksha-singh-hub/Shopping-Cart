@@ -1,6 +1,6 @@
 import './CategoryBar.css';
 
-const CATEGORIES = ['Meats & Fish', 'Vegetables', 'Fruits', 'Bakery', 'Beverages'];
+const CATEGORIES = ['Meats & Fish', 'Vegetables', 'Bakery', 'Beverages', 'Electronics', 'Accessories'];
 
 function CategoryBar({ active, onSelect }) {
   return (

@@ -33,6 +33,14 @@ db.exec(`
 
 // Insert mock products
 const products = [
+  // Local images placed under frontend/public
+  { name: 'Chocolate Cake', price: 299.99, description: 'Freshly baked chocolate cake', image: 'cake.jpeg', category: 'Bakery' },
+  { name: 'Capsicum', price: 59.99, description: 'Green bell pepper, per 500g', image: 'capsicum.jpg', category: 'Vegetables' },
+  { name: 'Soft Drink', price: 99.99, description: 'Refreshing beverage 1L', image: 'drink.jpg', category: 'Beverages' },
+  { name: 'Fresh Fish', price: 249.99, description: 'Daily catch cleaned and cut', image: 'fish.jpg', category: 'Meats & Fish' },
+  { name: 'Ladyfinger', price: 39.99, description: 'Okra, per 500g', image: 'ladyfinger.webp', category: 'Vegetables' },
+  { name: 'Red Meat', price: 349.99, description: 'Premium quality meat, 1kg', image: 'meat.jpg', category: 'Meats & Fish' },
+  { name: 'Tomato', price: 49.99, description: 'Farm fresh tomatoes, per 1kg', image: 'tomato.jpg', category: 'Vegetables' },
   { name: 'Wireless Headphones', price: 79.99, description: 'Premium noise-cancelling wireless headphones', image: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500', category: 'Electronics' },
   { name: 'Smart Watch', price: 199.99, description: 'Fitness tracking smartwatch with heart rate monitor', image: 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500', category: 'Electronics' },
   { name: 'Laptop Backpack', price: 49.99, description: 'Durable backpack with laptop compartment', image: 'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=500', category: 'Accessories' },
@@ -47,8 +55,16 @@ const products = [
 
 const insertProduct = db.prepare('INSERT INTO products (name, price, description, image, category) VALUES (?, ?, ?, ?, ?)');
 
-// Clear existing products first
-db.prepare('DELETE FROM products').run();
+// Clear existing data with FK safety (cart/orders reference products)
+db.exec(`
+  BEGIN;
+  PRAGMA foreign_keys = OFF;
+  DELETE FROM cart;
+  DELETE FROM orders;
+  DELETE FROM products;
+  PRAGMA foreign_keys = ON;
+  COMMIT;
+`);
 
 products.forEach(product => {
   insertProduct.run(product.name, product.price, product.description, product.image, product.category);
